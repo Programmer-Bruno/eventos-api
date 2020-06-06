@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'cliente/criar', component: CriarClienteComponent},
   {path: 'cliente/editar/:id', component: EditarClienteComponent},
   {path: 'casaDeShow', component: CasaShowComponent},
-  {path: 'casaDeShow/criar/:id', component: CriarCasaShowComponent},
+  {path: 'casaDeShow/criar', component: CriarCasaShowComponent},
   {path: 'casaDeShow/editar/:id', component: EditarCasaShowComponent},
   {path: 'evento', component: EventoComponent},
   {path: 'evento/criar/:id', component: EventoComponent},
