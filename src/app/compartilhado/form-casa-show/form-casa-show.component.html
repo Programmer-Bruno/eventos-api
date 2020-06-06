@@ -1,0 +1,98 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input 
+        class="form-control"
+        id="nome"
+        placeholder="Digite seu nome..." 
+        #nome="ngModel"
+        [(ngModel)]="casaShow.nome" name="nome"
+        [class.is-invalid]="!nome.valid && nome.touched" required>
+        <div *ngIf="!nome.valid && nome.touched" class="text-danger">
+            Digite o nome da casa de show.
+        </div>
+
+        <label for="cep">Cep</label>
+        <input
+        class="form-control"
+        id="cep"
+        placeholder="Digite o cep"
+        #cep="ngModel"
+        [(ngModel)]="casaShow.cep" name="cep"
+        [class.is-invalid]="!cep.valid && cep.touched" required>
+        <div *ngIf="!cep.valid && cep.touched" class="text-danger">
+            Digite o cep.
+        </div>
+
+        <label for="uf">Uf</label>
+        <input
+        class="form-control"
+        id="uf"
+        placeholder="Digite seu email"
+        #uf="ngModel"
+        [(ngModel)]="casaShow.uf" name="uf"
+        [class.is-invalid]="!uf.valid && uf.touched" required>
+        <div *ngIf="!uf.valid && uf.touched" class="text-danger">
+            Digite o estado.
+        </div>
+
+        <label for="cidade">Cidade</label>
+        <input
+        class="form-control"
+        id="cidade"
+        placeholder="Digite a cidade"
+        #cidade="ngModel"
+        [(ngModel)]="casaShow.cidade" name="cidade"
+        [class.is-invalid]="!cidade.valid && cidade.touched" required>
+        <div *ngIf="!cidade.valid && cidade.touched" class="text-danger">
+            Digite sua cidade
+        </div>
+
+        <label for="bairro">Bairro</label>
+        <input 
+        class="form-control"
+        id="bairro"
+        placeholder="Digite o bairro"
+        #bairro="ngModel"
+        [(ngModel)]="casaShow.bairro" name="bairro"
+        [class.is-invalid]="!bairro.valid && bairro.touched" required>
+        <div *ngIf="!bairro.valid && bairro.touched" class="text-danger">
+            Digite o bairro
+        </div>
+
+        <label for="logradouro">Logradouro</label>
+        <input 
+        class="form-control"
+        id="logradouro"
+        placeholder="Digite o logradouro"
+        #logradouro="ngModel"
+        [(ngModel)]="casaShow.logradouro" name="logradouro"
+        [class.is-invalid]="!bairro.valid && bairro.touched" required>
+        <div *ngIf="!logradouro.valid && logradouro.touched" class="text-danger">
+            Digite o logradouro
+        </div>
+
+        <label for="complemento">Complemento</label>
+        <input 
+        class="form-control"
+        id="complemento"
+        placeholder="Digite o complemento"
+        #complemento="ngModel"
+        [(ngModel)]="casaShow.complemento" name="complemento">
+
+        
+
+        <label for="capacidade">Capacidade</label>
+        <input 
+        class="form-control"
+        id="capacidade"
+        placeholder="Digite a capacidade"
+        #capacidade="ngModel"
+        [(ngModel)]="casaShow.capacidade" name="capacidade"
+        [class.is-invalid]="!capacidade.valid && capacidade.touched" required>
+        <div *ngIf="!capacidade.valid && capacidade.touched" class="text-danger">
+            Digite a capacidade.
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Salvar</button>
+</form>

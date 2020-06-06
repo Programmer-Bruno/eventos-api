@@ -1,0 +1,52 @@
+<div class="x">
+</div>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <app-erro-msg></app-erro-msg>
+            <div class="text-center" *ngIf="!existemCasasShow()">
+                Nenhuma Casa de Show cadastrada.
+            </div>
+        </div>
+    </div>
+    <div class="text-right">
+        <button type="button" class="btn btn-success" routerLink="/casaDeShow/criar">Nova Casa de Show</button>
+    </div>
+    <table class="table table-striped" *ngIf="existemCasasShow()">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cep</th>
+                <th scope="col">Uf</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Bairro</th>
+                <th scope="col">Complemento</th>
+                <th scope="col">Logradouro</th>
+                <th scope="col">Capacidade</th>
+                <th scope="col" colspan="2">Ações</th>
+
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let casaShow of casasShow">
+                <td>{{casaShow.codigo}}</td>
+                <td>{{casaShow.nome}}</td>
+                <td>{{casaShow.cep}}</td>
+                <td>{{casaShow.uf}}</td>
+                <td>{{casaShow.cidade}}</td>
+                <td>{{casaShow.bairro}}</td>
+                <td>{{casaShow.complemento}}</td>
+                <td>{{casaShow.logradouro}}</td>
+                <td>{{casaShow.capacidade}}</td>
+
+                <td><button type="button" class="btn btn-danger btn-sm ml-1"
+                        (click)="deleteCasaShow(casaShow.codigo)">X</button>
+                    <button type="button" class="btn btn-primary btn-sm ml-1"
+                        routerLink="/casaDeShow/editar/{{casaShow.codigo}}">Editar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

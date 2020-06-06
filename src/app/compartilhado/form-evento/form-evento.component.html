@@ -1,0 +1,75 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input 
+        class="form-control"
+        id="nome"
+        placeholder="Digite seu nome..." 
+        #nome="ngModel"
+        [(ngModel)]="evento.nome" name="nome"
+        [class.is-invalid]="!nome.valid && nome.touched" required>
+        <div *ngIf="!nome.valid && nome.touched" class="text-danger">
+            Digite seu nome.
+        </div>
+
+        <label for="descricao">Descricao</label>
+        <input
+        class="form-control"
+        id="descricao"
+        placeholder="Digite a descrição"
+        #descricao="ngModel"
+        [(ngModel)]="evento.descricao" name="descricao"
+        [class.is-invalid]="!descricao.valid && descricao.touched" required>
+        <div *ngIf="!descricao.valid && descricao.touched" class="text-danger">
+            Digite a descrição.
+        </div>
+
+        <label for="data">Data</label>
+        <input type="date"
+        class="form-control"
+        id="data"
+        #data="ngModel"
+        [(ngModel)]="evento.data" name="email"
+        [class.is-invalid]="!data.valid && data.touched" required>
+        <div *ngIf="!data.valid && data.touched" class="text-danger">
+            Digite sua data
+        </div>
+
+        <label for="preco">Preço</label>
+        <input
+        class="form-control"
+        id="preco"
+        placeholder="Digite seu cpf"
+        #preco="ngModel"
+        [(ngModel)]="evento.preco" name="preco"
+        [class.is-invalid]="!preco.valid && preco.touched" required>
+        <div *ngIf="!preco.valid && preco.touched" class="text-danger">
+            Digite o preço
+        </div>
+
+        <label for="quant">Quantidade de Ingresso Disponível</label>
+        <input 
+        class="form-control"
+        id="quant"
+        placeholder="Digite a quantidade"
+        #quant="ngModel"
+        [(ngModel)]="evento.quant_ingresso" name="senha"
+        [class.is-invalid]="!quant.valid && quant.touched" required>
+        <div *ngIf="!quant.valid && quant.touched" class="text-danger">
+            Digite uma quantidade
+        </div>
+
+        <label for="casaShow">Casa de Show</label>
+        <select
+        class="form-control"
+        id="casaShow"
+        placeholder="Selecione a casa de Show"
+        #casaShow="ngModel"
+        [(ngModel)]="evento.casaDeShow" name="senha"
+        [class.is-invalid]="!casaShow.valid && casaShow.touched" required> </select>
+        <div *ngIf="!casaShow.valid && casaShow.touched" class="text-danger">
+            Selecione uma casa de show
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Salvar</button>
+</form>

@@ -1,0 +1,46 @@
+<div class="x">
+</div>
+<div class="container mt-3">
+	<div class="row">
+		<div class="col-md-8 mx-auto">
+			<app-erro-msg></app-erro-msg>
+			<div class="text-center" *ngIf="!existemEventos()">
+				Nenhum evento cadastrado.
+			</div>
+		</div>
+	</div>
+	<div class="text-right">
+		<button type="button" class="btn btn-success" routerLink="/evento/criar">Novo Evento</button>
+	</div>
+	<table class="table table-striped" *ngIf="existemEventos()">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">Código</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Descricao</th>
+				<th scope="col">Data</th>
+                <th scope="col">Preco</th>
+                <th scope="col">Quant_ingresso</th>
+                <th scope="col">Casa De Show</th>
+                <th scope="col" colspan="2">Ações</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr *ngFor="let evento of eventos">
+				<td>{{evento.codigo}}</td>
+				<td>{{evento.nome}}</td>
+				<td>{{evento.descricao}}</td>
+				<td>{{evento.data}}</td>
+                <td>{{evento.preco}}</td>
+                <td>{{evento.quant_ingresso}}</td>
+                <td>{{evento.casaDeShow.nome}}</td>
+
+				<td><button type="button" class="btn btn-danger btn-sm ml-1"
+						(click)="deleteEvento(evento.codigo)">X</button>
+					<button type="button" class="btn btn-primary btn-sm ml-1"
+						routerLink="/evento/editar/{{evento.codigo}}">Editar</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

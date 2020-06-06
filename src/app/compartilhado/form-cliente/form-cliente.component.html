@@ -1,0 +1,64 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input 
+        class="form-control"
+        id="nome"
+        placeholder="Digite seu nome..." 
+        #nome="ngModel"
+        [(ngModel)]="cliente.nome" name="nome"
+        [class.is-invalid]="!nome.valid && nome.touched" required>
+        <div *ngIf="!nome.valid && nome.touched" class="text-danger">
+            Digite seu nome.
+        </div>
+
+        <label for="idade">Idade</label>
+        <input
+        class="form-control"
+        id="idade"
+        placeholder="Digite sua idade"
+        #idade="ngModel"
+        [(ngModel)]="cliente.idade" name="idade"
+        [class.is-invalid]="!idade.valid && idade.touched" required>
+        <div *ngIf="!idade.valid && idade.touched" class="text-danger">
+            Digite sua idade.
+        </div>
+
+        <label for="email">Email</label>
+        <input
+        class="form-control"
+        id="email"
+        placeholder="Digite seu email"
+        #email="ngModel"
+        [(ngModel)]="cliente.email" name="email"
+        [class.is-invalid]="!email.valid && email.touched" required>
+        <div *ngIf="!email.valid && email.touched" class="text-danger">
+            Digite seu email
+        </div>
+
+        <label for="cpf">Cpf</label>
+        <input
+        class="form-control"
+        id="cpf"
+        placeholder="Digite seu cpf"
+        #cpf="ngModel"
+        [(ngModel)]="cliente.cpf" name="cpf"
+        [class.is-invalid]="!cpf.valid && cpf.touched" required>
+        <div *ngIf="!cpf.valid && cpf.touched" class="text-danger">
+            Digite seu cpf
+        </div>
+
+        <label for="senha">Senha</label>
+        <input type="password"
+        class="form-control"
+        id="senha"
+        placeholder="Digite sua senha"
+        #senha="ngModel"
+        [(ngModel)]="cliente.senha" name="senha"
+        [class.is-invalid]="!senha.valid && senha.touched" required>
+        <div *ngIf="!senha.valid && senha.touched" class="text-danger">
+            Digite sua senha
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Salvar</button>
+</form>
