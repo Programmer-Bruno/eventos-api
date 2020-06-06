@@ -17,7 +17,6 @@ import { CriarCasaShowComponent } from './paginas/criar-casa-show/criar-casa-sho
 import { EditarCasaShowComponent } from './paginas/editar-casa-show/editar-casa-show.component';
 import { EventoComponent } from './paginas/lista/evento/evento.component';
 import { FormEventoComponent } from './compartilhado/form-evento/form-evento.component';
-import { CriarEventoComponent } from './criar-evento/criar-evento.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +32,7 @@ import { CriarEventoComponent } from './criar-evento/criar-evento.component';
     CriarCasaShowComponent,
     EditarCasaShowComponent,
     EventoComponent,
-    FormEventoComponent,
-    CriarEventoComponent
+    FormEventoComponent
   ],
   imports: [
     BrowserModule,
